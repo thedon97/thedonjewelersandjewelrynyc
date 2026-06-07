@@ -1,0 +1,8 @@
+.env
+.diamond-cache.json
+node_modules/
+server-runtime.log
+*.zip
+_zip_under_25mb/
+_project_export_under_25mb/
+_vercel_*_export/
