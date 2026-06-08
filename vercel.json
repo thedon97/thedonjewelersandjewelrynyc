@@ -1,0 +1,11 @@
+{
+  "cleanUrls": false,
+  "outputDirectory": ".",
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
