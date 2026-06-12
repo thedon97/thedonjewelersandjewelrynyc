@@ -1560,10 +1560,10 @@ function productActionButtons(product) {
   const hrefByButton = (label) => {
     if (/financing/i.test(label)) return "#/financing-policy";
     if (/cart/i.test(label)) return "";
-    if (/exact weight|specifications/i.test(label)) return `mailto:${contactEmail}?subject=${encodeURIComponent(`Exact weight and specifications - ${productName(product)}`)}`;
+    if (/exact weight|specifications/i.test(label)) return requestHref(product, "exact-weight-specifications");
     if (/custom order/i.test(label)) return "#/custom-orders";
-    if (/request price|custom quote|pricing|custom size|custom letter|build your chain|build your bracelet/i.test(label)) return "#/custom-orders";
-    return `mailto:${contactEmail}?subject=${encodeURIComponent(`Product request - ${productName(product)}`)}`;
+    if (/request price|custom quote|pricing|custom size|custom letter|build your chain|build your bracelet/i.test(label)) return requestHref(product, "custom-quote");
+    return requestHref(product, "product-request");
   };
   return `<div class="builder-actions product-extra-actions">
     ${buttons.filter((label) => !/cart/i.test(label)).map((label, index) => {
@@ -1627,15 +1627,23 @@ function payableCartItems() {
 }
 
 function stripePayButton(total) {
-  return `<a class="button button-gold" href="${stripePaymentLink}" target="_blank" rel="noopener noreferrer">Pay Now with Stripe${total > 0 ? ` - ${money.format(total)}` : ""}</a>`;
+  return `<a class="button button-gold" href="${stripePaymentLink}" target="_blank" rel="noopener noreferrer" data-stripe-checkout="true" data-stripe-total="${total || 0}">Pay Now with Stripe${total > 0 ? ` - ${money.format(total)}` : ""}</a>`;
 }
 
 function stripeCheckoutButton(total) {
-  return `<a class="button button-gold" href="${stripePaymentLink}" target="_blank" rel="noopener noreferrer">Checkout with Stripe${total > 0 ? ` - ${money.format(total)}` : ""}</a>`;
+  return `<a class="button button-gold" href="${stripePaymentLink}" target="_blank" rel="noopener noreferrer" data-stripe-checkout="true" data-stripe-total="${total || 0}">Checkout with Stripe${total > 0 ? ` - ${money.format(total)}` : ""}</a>`;
 }
 
 function requestPriceButton(product, className = "button button-light") {
-  return `<a class="${className}" href="mailto:${contactEmail}?subject=${encodeURIComponent(`Request Price - ${productName(product)}`)}">Request Price</a>`;
+  return `<a class="${className}" href="${requestHref(product, "pricing")}">Request Price</a>`;
+}
+
+function requestHref(product, intent = "product") {
+  const params = new URLSearchParams();
+  params.set("product", productName(product));
+  params.set("category", product.category || "Product Inquiry");
+  params.set("intent", intent);
+  return `#/request/product?${params.toString()}`;
 }
 
 function hideSplashScreen() {
@@ -1760,7 +1768,7 @@ function productCard(product) {
         ${productBadges(product)}
         <div class="card-actions">
           <a class="button button-dark" href="#/product/${product.id}">View Details</a>
-          ${priced ? `<a class="button button-gold" href="${stripePaymentLink}" target="_blank" rel="noopener noreferrer">Checkout with Stripe</a>` : requestPriceButton(product)}
+          ${priced ? `<a class="button button-gold" href="${stripePaymentLink}" target="_blank" rel="noopener noreferrer" data-stripe-checkout="true" data-stripe-total="${numericPrice(product.price)}" data-stripe-product="${htmlSafe(productName(product))}">Checkout with Stripe</a>` : requestPriceButton(product)}
         </div>
       </div>
     </article>
@@ -2255,9 +2263,9 @@ function productDetail(id) {
           ${engagementCertificationNote(product)}
           ${productFields(product).map(([label, values]) => optionGroup(label, values, product)).join("")}
           <div class="builder-actions">
-            <a class="button button-gold" href="mailto:${contactEmail}?subject=Request%20Quote%20/%20Message%20Us">Request Quote / Message Us</a>
+            <a class="button button-gold" href="${requestHref(product, "quote-message")}">Request Quote / Message Us</a>
             <a class="button button-dark" href="#/custom-orders">${product.cta}</a>
-            ${product.extraCta ? `<a class="button button-light" href="mailto:${contactEmail}?subject=Special%20Jewelry%20Request">${product.extraCta}</a>` : ""}
+            ${product.extraCta ? `<a class="button button-light" href="${requestHref(product, "special-request")}">${product.extraCta}</a>` : ""}
           </div>
           ${productActionButtons(product)}
         </div>
@@ -2323,7 +2331,7 @@ function showNaturalDiamondModal() {
       <h2>Request a custom quote</h2>
       <p>Please request natural diamond pricing through direct messaging, custom design, custom stone size, or Request Quote so we can price your natural diamond selection accurately.</p>
       <div class="hero-actions">
-        <a class="button button-gold" href="mailto:${contactEmail}?subject=Natural%20Diamond%20Quote%20Request">Request Quote</a>
+        <a class="button button-gold" href="#/request/product?intent=natural-diamond-quote">Request Quote</a>
         <a class="button button-dark" href="#/custom-orders">Custom Design / Stone Size</a>
       </div>
     </div>
@@ -2396,7 +2404,7 @@ function renderSummary(product) {
       ${tennisQuote ? `<div><dt>Estimated CTW</dt><dd>${tennisQuote.caratWeight}</dd></div><div><dt>Estimated gold weight</dt><dd>${tennisQuote.goldWeight}</dd></div>` : ""}
       <div><dt>Live Diamond</dt><dd>${htmlSafe(liveDiamondLabel(liveDiamond))}</dd></div>
     </dl>
-    <a class="button button-gold" href="mailto:${contactEmail}?subject=Request%20Quote%20/%20Message%20Us">Request Quote / Message Us</a>
+    <a class="button button-gold" href="${requestHref(product, "quote-message")}">Request Quote / Message Us</a>
     <a class="button button-light" href="${liveDiamondHref}">Select Live Diamond</a>
     <div class="price-row"><span>${naturalDiamond ? "Final selected price" : "Final selected price"}</span><strong>${naturalDiamond ? "Request pricing" : money.format(price)}</strong></div>
     ${naturalDiamond ? requestPriceButton(product, "button button-gold") : stripeCheckoutButton(price)}
@@ -2627,7 +2635,7 @@ function importedProductDetail(product) {
             <div><dt>Price</dt><dd>${product.priceLabel || "Request Pricing"}</dd></div>
           </dl>
           <div class="builder-actions">
-            <a class="button button-gold" href="mailto:${contactEmail}?subject=Custom%20Quote%20Request%20-%20${encodeURIComponent(productName(product))}">Request Custom Quote</a>
+            <a class="button button-gold" href="${requestHref(product, "custom-quote")}">Request Custom Quote</a>
             <a class="button button-dark" href="#/custom-orders">Message Us for Custom Design</a>
             <a class="button button-light" href="#/request/contact">Contact The Don Jewelers & Jewelry</a>
           </div>
@@ -2791,7 +2799,7 @@ function renderImportDrafts(drafts) {
         <div class="builder-actions">
           <button class="button button-gold" type="button" data-approve="${index}">Approve Listing</button>
           <button class="button button-light" type="button" data-remove-draft="${index}">Remove Draft</button>
-          <a class="button button-dark" href="mailto:${contactEmail}?subject=Custom%20Quote%20Request%20-%20${encodeURIComponent(draft.name)}">Request Custom Quote</a>
+          <a class="button button-dark" href="#/request/product?product=${encodeURIComponent(draft.name)}&category=${encodeURIComponent(draft.category || "Product Inquiry")}&intent=custom-quote">Request Custom Quote</a>
         </div>
       </div>
     </article>
@@ -2824,17 +2832,19 @@ function wireRequestForm(formId, successText) {
     if (error) error.hidden = true;
     try {
       const payload = requestPayloadFromForm(form);
+      await sendWebsiteRequest(payload);
       savePendingRequest(payload);
       if (success) {
         success.hidden = false;
-        success.textContent = `${successText} This website saved the request in this browser for follow-up review.`;
+        success.textContent = `${successText} A notification was sent to The Don Jewelers & Jewelry.`;
       }
       form.reset();
     } catch (submitError) {
-      savePendingRequest(requestPayloadFromForm(form));
+      const fallbackPayload = requestPayloadFromForm(form);
+      savePendingRequest(fallbackPayload);
       if (error) {
         error.hidden = false;
-        error.textContent = "Your request was saved in this browser for follow-up review.";
+        error.textContent = `${submitError.message || "Email notification could not be sent."} Your request was saved in this browser for follow-up review.`;
       }
     } finally {
       if (button) {
@@ -2899,6 +2909,59 @@ function savePendingRequest(payload) {
   pending.unshift({ ...payload, savedAt: new Date().toISOString() });
   localStorage.setItem("donPendingCustomRequests", JSON.stringify(pending.slice(0, 50)));
 }
+
+async function sendWebsiteRequest(payload) {
+  const response = await fetch("/api/send-request", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || data.ok === false) {
+    throw new Error(data.message || "Email notification could not be sent.");
+  }
+  return data;
+}
+
+function sendStripeStartAlert(link) {
+  const payableItems = payableCartItems();
+  const total = Number(link.dataset.stripeTotal || cartTotal(payableItems) || 0);
+  const payload = {
+    type: "Stripe checkout started",
+    source: location.href,
+    customer: {},
+    jewelry: {
+      requestType: "Stripe checkout started",
+      productName: link.dataset.stripeProduct || "Cart checkout",
+      productCategory: "Checkout",
+      notes: cart.length
+        ? cart.map((item) => `${item.name} - ${item.pricingNote || money.format(item.price)} - ${Object.entries(item.selections || {}).map(([key, value]) => `${key}: ${value}`).join(" | ")}`).join("\n")
+        : "Customer clicked Stripe checkout from the website.",
+    },
+    checkout: {
+      provider: "Stripe Payment Link",
+      estimatedTotal: total > 0 ? money.format(total) : "Not available",
+      paymentLink: stripePaymentLink,
+      note: "This alert confirms the customer clicked the Stripe payment button. Confirm completed payment inside Stripe or add a Stripe webhook for completed-payment emails.",
+    },
+  };
+  const body = JSON.stringify(payload);
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon("/api/send-request", new Blob([body], { type: "application/json" }));
+    return;
+  }
+  fetch("/api/send-request", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body,
+    keepalive: true,
+  }).catch(() => {});
+}
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("[data-stripe-checkout]");
+  if (link) sendStripeStartAlert(link);
+});
 
 function choiceGroup(label, name, options, wide = false) {
   return `
@@ -2969,10 +3032,11 @@ function requestTypeToCategory(requestType) {
 function customRequestForm({ formId, requestType = "Request Custom Design Form", productCategory = "", productName = "" }) {
   const category = productCategory || requestTypeToCategory(requestType);
   return `
-    <form class="custom-order-form engagement-build-form" id="${formId}" data-request-type="${requestType}" data-product-category="${category}" data-product-name="${productName}">
+    <form class="custom-order-form engagement-build-form" id="${formId}" data-request-type="${htmlSafe(requestType)}" data-product-category="${htmlSafe(category)}" data-product-name="${htmlSafe(productName)}">
       <label>Full Name<input name="fullName" autocomplete="name" required></label>
       <label>Email Address<input name="email" type="email" autocomplete="email" required></label>
       <label>Phone Number<input name="phone" type="tel" autocomplete="tel" required></label>
+      ${productName ? `<label class="form-wide">Product<input name="productName" value="${htmlSafe(productName)}" readonly></label>` : ""}
       <label>Product Category
         <select name="productCategory">
           ${quoteCategories.map((item) => `<option ${item === requestType ? "selected" : ""}>${item}</option>`).join("")}
@@ -3029,17 +3093,25 @@ const requestPageTypes = {
   design: "Request Custom Design Form",
 };
 
-function customRequestPage(slug) {
+function customRequestPage(slug, params = new URLSearchParams()) {
   const requestType = requestPageTypes[slug] || "General Contact Form";
+  const productName = params.get("product") || "";
+  const productCategory = params.get("category") || "";
+  const intent = params.get("intent") || "";
+  const detail = productName
+    ? `Request for ${productName}${intent ? ` (${intent.replace(/-/g, " ")})` : ""}.`
+    : "Submit your details and inspiration photos.";
   shell(`
     <main>
-      ${pageHero("Custom Quote", requestType, "Submit your details and inspiration photos. Every request saves to the website system and is routed to The Don Jewelers & Jewelry for follow-up.")}
+      ${pageHero("Custom Quote", requestType, `${detail} Every request is routed to The Don Jewelers & Jewelry for follow-up.`)}
       <section class="custom-form-section">
-        ${customRequestForm({ formId: "request-form", requestType })}
+        ${customRequestForm({ formId: "request-form", requestType, productCategory, productName })}
       </section>
       ${aboutUs()}
     </main>
   `);
+  const notes = document.querySelector("#request-form textarea[name='notes']");
+  if (notes && productName) notes.value = `I am requesting ${intent ? intent.replace(/-/g, " ") : "information"} for ${productName}.`;
   wireRequestForm("request-form", "Thank you for your submission. Your request has been received and is currently under review. We will contact you regarding pricing, design details, and next steps.");
 }
 
@@ -3314,7 +3386,7 @@ function paymentStatusPage(status) {
         <div class="hero-actions">
           <a class="button button-gold" href="#/cart">Return to Cart</a>
           <a class="button button-dark" href="#/checkout">Checkout Details</a>
-          <a class="button button-light" href="mailto:${contactEmail}?subject=Order%20Payment%20Support">Email Support</a>
+          <a class="button button-light" href="#/request/contact?intent=order-payment-support">Email Support</a>
         </div>
       `)}
       ${aboutUs()}
@@ -3459,7 +3531,7 @@ function router() {
   if (path === "select-diamond") return diamondInventoryPage(params);
   if (path === "products") return productGrid(allProducts(), "Shop All Luxury Jewelry with The Don");
   if (path === "admin") return adminDashboard();
-  if (parts[0] === "request") return customRequestPage(parts[1]);
+  if (parts[0] === "request") return customRequestPage(parts[1], params);
   if (parts[0] === "category") return category(parts[1]);
   if (parts[0] === "product") return productDetail(parts[1]);
   if (path === "custom-orders") return customOrders();
