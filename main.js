@@ -91,6 +91,19 @@ const earringCarats = [
   ["5.5 carat", 3925],
   ["6 carat", 4300],
 ];
+const premiumStudEarringCarats = [
+  ["1 carat", 1200],
+  ["1.5 carat", 1450],
+  ["2 carat", 1700],
+  ["2.5 carat", 1950],
+  ["3 carat", 2200],
+  ["3.5 carat", 2450],
+  ["4 carat", 2700],
+  ["4.5 carat", 2950],
+  ["5 carat", 3200],
+  ["5.5 carat", 3450],
+  ["6 carat", 3700],
+];
 const monarchRingCarats = [
   ["1 carat", 1950],
   ["1.5 carat", 2325],
@@ -136,6 +149,46 @@ const quoteCategories = ["Custom Engagement Ring Request", "Custom Tennis Bracel
 const quoteQualityOptions = ["VVS", "VS", "SI", "DE Color", "Natural diamond quote", "Lab-grown diamond quote", "Not sure yet"];
 const importedDiamondQualityOptions = ["VVS", "VS"];
 const handcraftedNotice = "Due to the handcrafted nature of fine jewelry, final gold weight, diamond weight, stone count, and specifications may vary slightly. Contact us to request exact weight and specifications before purchase.";
+
+const premiumStudMetalSurcharges = {
+  "18K Yellow Gold": 375,
+  "18K White Gold": 375,
+  "18K Rose Gold": 375,
+  Platinum: 625,
+};
+
+const premiumStudProducts = [
+  ["asscher-diamond-stud-earrings", "Asscher Diamond Stud Earrings", "asscher-stud-earrings-product-black.png", "Asscher cut diamond screw-back stud earrings", "Asscher"],
+  ["cushion-diamond-stud-earrings", "Cushion Diamond Stud Earrings", "cushion-stud-earrings-product-black.png", "Cushion cut diamond screw-back stud earrings", "Cushion"],
+  ["emerald-diamond-stud-earrings", "Emerald Diamond Stud Earrings", "emerald-stud-earrings-product-black.png", "Emerald cut diamond screw-back stud earrings", "Emerald"],
+  ["oval-diamond-stud-earrings", "Oval Diamond Stud Earrings", "oval-stud-earrings-product-black.png", "Oval cut diamond screw-back stud earrings", "Oval"],
+  ["pear-diamond-stud-earrings", "Pear Diamond Stud Earrings", "pear-stud-earrings-product-black.png", "Pear shape diamond screw-back stud earrings", "Pear"],
+  ["round-brilliant-diamond-stud-earrings", "Round Brilliant Diamond Stud Earrings", "round-stud-earrings-product-black.png", "Round brilliant diamond screw-back stud earrings", "Round"],
+].map(([id, name, image, alt, shape]) => ({
+  id,
+  category: "Earrings",
+  name,
+  price: 1200,
+  estimate: 1200,
+  priceLabel: "Starting at $1,200 for 1 carat",
+  image,
+  alt,
+  lede: `${name} with screw-back posts, starting at $1,200 for 1 carat total weight. Select total carat weight from 1 to 6 carats, diamond quality, and metal. Final pricing updates by carat weight and metal, with natural diamonds available by request.`,
+  cta: `Message Us for Custom ${shape} Stud Earrings`,
+  metalSurcharges: premiumStudMetalSurcharges,
+  badges: ["Diamond Studs", "Screw Backs", "Starting at $1,200", "Made to Order"],
+  buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+  fields: [
+    ["Total Diamond Weight", premiumStudEarringCarats],
+    ["Diamond Shape", [shape]],
+    ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]],
+    ["Diamond Color", ["D", "E", "F"]],
+    ["Clarity", ["VVS", "VS"]],
+    ["Metal", metals],
+    ["Back Type", ["Screw back"]],
+    ["Specification Note", ["Weight varies. Request weight details."]],
+  ],
+}));
 
 const products = [
   {
@@ -499,6 +552,7 @@ const products = [
     },
     fields: [["Total Diamond Weight", earringCarats], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Type of Earring", ["Stud"]]],
   },
+  ...premiumStudProducts,
   {
     id: "marquise-arc",
     category: "Necklaces",
@@ -1447,6 +1501,12 @@ const diamondOriginByProduct = {
   "yellow-canary-diamond-studs": "LGD",
   "pink-monarch-diamond-studs": "LGD",
   "blue-monarch-diamond-studs": "LGD",
+  "asscher-diamond-stud-earrings": "LGD",
+  "cushion-diamond-stud-earrings": "LGD",
+  "emerald-diamond-stud-earrings": "LGD",
+  "oval-diamond-stud-earrings": "LGD",
+  "pear-diamond-stud-earrings": "LGD",
+  "round-brilliant-diamond-stud-earrings": "LGD",
   "marquise-arc": "LGD",
   "ever-band": "LGD",
   "lab-diamond-tennis-bracelet-8-1ct": "LGD",
