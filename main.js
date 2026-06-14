@@ -662,33 +662,33 @@ const products = [
   },
   {
     id: "lumiere-pearl-paperclip-bracelet",
-    category: "Bracelets",
-    name: "Lumiere Pearl Paperclip Bracelet",
+    category: "Anklets",
+    name: "Lumiere Pearl Paperclip Anklet",
     price: 1100,
     estimate: 1100,
     priceLabel: "Starting at $1,100 in 14K gold",
     image: "bracelet-04.png",
-    alt: "Gold paperclip bracelet with pearl stations on a black satin background",
-    lede: "Made-to-order pearl paperclip bracelet in 14K gold with luminous pearl stations and adjustable chain detail. Available in 14K or 18K gold only.",
-    cta: "Request Pearl Bracelet Quote",
-    badges: ["Bracelets", "Pearls", "14K Gold", "Made to Order"],
+    alt: "Gold paperclip anklet with pearl stations on a black satin background",
+    lede: "Made-to-order pearl paperclip anklet in 14K gold with luminous pearl stations and adjustable chain detail. Available in 14K or 18K gold only.",
+    cta: "Request Pearl Anklet Quote",
+    badges: ["Anklets", "Pearls", "14K Gold", "Made to Order"],
     buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", [["14K Yellow Gold", 1100], ["14K White Gold", 1100], ["14K Rose Gold", 1100], ["18K Yellow Gold", 1500], ["18K White Gold", 1500], ["18K Rose Gold", 1500]]], ["Bracelet Length", ["6.5 inches", "7 inches", "7.5 inches", "8 inches", "Custom Size - Message Request"]], ["Pearl Detail", ["Pearl stations"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+    fields: [["Metal", [["14K Yellow Gold", 1100], ["14K White Gold", 1100], ["14K Rose Gold", 1100], ["18K Yellow Gold", 1500], ["18K White Gold", 1500], ["18K Rose Gold", 1500]]], ["Anklet Length", ["8.5 inches", "9 inches", "9.5 inches", "10 inches", "Custom Size - Message Request"]], ["Pearl Detail", ["Pearl stations"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "fleur-diamond-cluster-station-bracelet",
-    category: "Bracelets",
-    name: "Fleur Diamond Cluster Station Bracelet",
+    category: "Anklets",
+    name: "Fleur Diamond Constellation Anklet",
     price: 1000,
     estimate: 1000,
     priceLabel: "Starting at $1,000 in 14K gold",
     image: "bracelet-05.png",
-    alt: "Gold lab diamond flower cluster station bracelet on black satin",
-    lede: "Made-to-order 14K lab-grown diamond cluster station bracelet with floral diamond stations and an estimated 0.55 to 0.75 CTW, depending on bracelet length and final stone layout. Platinum is available by custom quote.",
-    cta: "Request Fleur Bracelet Quote",
-    badges: ["Bracelets", "Lab Diamonds", "Cluster Detail", "Made to Order"],
+    alt: "Gold lab diamond constellation station anklet on black satin",
+    lede: "Made-to-order 14K lab-grown diamond constellation anklet with floral diamond stations and an estimated 0.55 to 0.75 CTW, depending on anklet length and final stone layout. Platinum is available by custom quote.",
+    cta: "Request Fleur Anklet Quote",
+    badges: ["Anklets", "Lab Diamonds", "Constellation Detail", "Made to Order"],
     buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", [["14K Yellow Gold", 1000], ["14K White Gold", 1000], ["14K Rose Gold", 1000], ["18K Yellow Gold", 1350], ["18K White Gold", 1350], ["18K Rose Gold", 1350]]], ["Bracelet Length", ["6.5 inches", "7 inches", "7.5 inches", "8 inches", "Custom Size - Message Request"]], ["Diamond Type", ["Lab-Grown Diamond"]], ["Estimated Diamond Weight", ["Approx. 0.55 to 0.75 CTW"]], ["Platinum Option", ["Available by custom quote"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+    fields: [["Metal", [["14K Yellow Gold", 1000], ["14K White Gold", 1000], ["14K Rose Gold", 1000], ["18K Yellow Gold", 1350], ["18K White Gold", 1350], ["18K Rose Gold", 1350]]], ["Anklet Length", ["8.5 inches", "9 inches", "9.5 inches", "10 inches", "Custom Size - Message Request"]], ["Diamond Type", ["Lab-Grown Diamond"]], ["Estimated Diamond Weight", ["Approx. 0.55 to 0.75 CTW"]], ["Platinum Option", ["Available by custom quote"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "aurora-multi-gemstone-paperclip-bracelet",
@@ -1734,10 +1734,16 @@ const categories = [
   ["select-diamond", "Live Diamond Selection", "diamond-banner.jpg"],
   ["engagement-rings", "Engagement Rings", "pink-oval-engagement-ring.jpeg"],
   ["pendants-charms", "Pendants / Charms", "saint-michael-diamond-angel-pendant.jpeg"],
-  ["earrings", "Earrings", "princess-diamond-earrings.png"],
+  ["womens-earrings", "Women's Earrings", "pink-monarch-diamond-studs.jpeg"],
+  ["mens-earrings", "Men's Earrings", "princess-diamond-earrings.png"],
   ["bracelets", "Bracelets", "diamond-bracelet.png"],
+  ["anklets", "Anklets", "bracelet-04.png"],
   ["rings", "Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
+  ["mens-rings", "Men's Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
+  ["womens-rings", "Women's Rings", "celestial-diamond-sapphire-ring.jpeg"],
   ["wedding-bands", "Wedding Bands", "mens-round-diamond-filigree-wedding-band.jpg"],
+  ["mens-wedding-bands", "Men's Wedding Bands", "mens-round-diamond-filigree-wedding-band.jpg"],
+  ["womens-wedding-bands", "Women's Wedding Bands", "gold-engagement-rings.png"],
   ["custom-jewelry", "Custom Jewelry", "custom-dejaun-diamond-name-pendant.jpeg"],
   ["watches", "Watches", "two-tone-rolex-datejust-diamond-dial.jpeg"],
   ["chains", "Chains", "yellow-gold-rope-chain-triple.jpeg"],
@@ -1806,8 +1812,10 @@ function navLinks() {
     <a href="#/category/chains">Chains</a>
     <a href="#/category/pendants-charms">Pendants / Charms</a>
     <a href="#/category/custom-jewelry">Custom Jewelry</a>
-    <a href="#/category/earrings">Earrings</a>
+    <a href="#/category/womens-earrings">Women's Earrings</a>
+    <a href="#/category/mens-earrings">Men's Earrings</a>
     <a href="#/category/bracelets">Bracelets</a>
+    <a href="#/category/anklets">Anklets</a>
     <a href="#/category/watches">Watches</a>
     <a class="nav-highlight" href="#/custom-orders">Custom Orders</a>
     <a href="#/cart">Cart <span class="cart-pill">${cart.length}</span></a>
@@ -2046,6 +2054,67 @@ function productGrid(list, title, body = "", action = "") {
   `);
 }
 
+const sharedStudEarringIds = new Set([
+  "celeste-halo",
+  "round-diamond-studs",
+  "round-martini-diamond-studs",
+  "round-cluster-diamond-stud-earrings",
+  "asscher-diamond-stud-earrings",
+  "cushion-diamond-stud-earrings",
+  "emerald-diamond-stud-earrings",
+  "oval-diamond-stud-earrings",
+  "pear-diamond-stud-earrings",
+  "round-brilliant-diamond-stud-earrings",
+]);
+
+const womensColoredEarringIds = new Set([
+  "yellow-canary-diamond-studs",
+  "pink-monarch-diamond-studs",
+  "blue-monarch-diamond-studs",
+]);
+
+const mensRingIds = new Set([
+  "yellow-gold-diamond-cuban-link-ring",
+  "white-gold-diamond-cuban-link-bracelet",
+  "yellow-gold-diamond-cuban-link-bracelet",
+  "medusa-diamond-signet-ring",
+]);
+
+const womensRingIds = new Set([
+  "gemstone-leaf-wedding-band-set",
+  "royal-sapphire-signet-ring",
+  "celestial-diamond-sapphire-ring",
+]);
+
+const mensWeddingBandIds = new Set([
+  "mens-royal-filigree-princess-channel-wedding-band",
+  "mens-white-gold-asscher-channel-wedding-band",
+  "mens-pear-cut-filigree-diamond-wedding-band",
+  "mens-asscher-cut-filigree-diamond-wedding-band",
+  "mens-engraved-satin-filigree-wedding-band",
+  "mens-round-diamond-filigree-wedding-band",
+]);
+
+const womensWeddingBandIds = new Set([
+  "wedding-band",
+  "gemstone-leaf-wedding-band-set",
+]);
+
+function categoryProducts(slug, label) {
+  const products = allProducts();
+  if (slug === "pendants-charms") return products.filter((p) => ["Pendants / Charms", "Pendants"].includes(p.category) || ["silver-cross-chain", "marquise-arc"].includes(p.id));
+  if (slug === "bracelets") return products.filter((p) => ["Bracelets", "Tennis Bracelets"].includes(p.category));
+  if (slug === "anklets") return products.filter((p) => p.category === "Anklets");
+  if (slug === "earrings") return products.filter((p) => p.category === "Earrings");
+  if (slug === "womens-earrings") return products.filter((p) => sharedStudEarringIds.has(p.id) || womensColoredEarringIds.has(p.id));
+  if (slug === "mens-earrings") return products.filter((p) => sharedStudEarringIds.has(p.id));
+  if (slug === "mens-rings") return products.filter((p) => mensRingIds.has(p.id));
+  if (slug === "womens-rings") return products.filter((p) => womensRingIds.has(p.id));
+  if (slug === "mens-wedding-bands") return products.filter((p) => mensWeddingBandIds.has(p.id));
+  if (slug === "womens-wedding-bands") return products.filter((p) => womensWeddingBandIds.has(p.id));
+  return products.filter((p) => p.category === label);
+}
+
 function category(slug) {
   if (slug === "select-diamond") return diamondInventoryPage();
   const categoryLabels = {
@@ -2055,6 +2124,8 @@ function category(slug) {
     watches: "Watches",
     "custom-jewelry": "Custom Jewelry",
     "gold-buying-services": "Gold Buying / Services",
+    earrings: "Earrings",
+    anklets: "Anklets",
   };
   const engagementFirst = (list) => [...list].sort((a, b) => {
     if (a.category === "Engagement Rings" && b.category !== "Engagement Rings") return -1;
@@ -2069,18 +2140,21 @@ function category(slug) {
     "engagement-rings": "Build your engagement ring with The Don",
     "select-diamond": "Live Diamond Selection",
     "wedding-bands": "Shop Wedding Bands with The Don",
+    "mens-wedding-bands": "Shop Men's Wedding Bands with The Don",
+    "womens-wedding-bands": "Shop Women's Wedding Bands with The Don",
+    "mens-rings": "Shop Men's Rings with The Don",
+    "womens-rings": "Shop Women's Rings with The Don",
     necklaces: "Shop Necklaces with The Don",
     chains: "Shop Chains with The Don",
     earrings: "Shop Earrings with The Don",
+    "womens-earrings": "Shop Women's Earrings with The Don",
+    "mens-earrings": "Shop Men's Earrings with The Don",
     bracelets: "Shop Bracelets with The Don",
+    anklets: "Shop Anklets with The Don",
     "pendants-charms": "Shop Pendants / Charms with The Don",
   };
   const label = categories.find(([id]) => id === slug)?.[1] || categoryLabels[slug];
-  const list = slug === "pendants-charms"
-    ? allProducts().filter((p) => ["Pendants / Charms", "Pendants"].includes(p.category) || ["silver-cross-chain", "marquise-arc"].includes(p.id))
-    : slug === "bracelets"
-      ? allProducts().filter((p) => ["Bracelets", "Tennis Bracelets"].includes(p.category))
-      : allProducts().filter((p) => p.category === label);
+  const list = categoryProducts(slug, label);
   const action = slug === "engagement-rings"
     ? `<a class="button button-gold" href="#/build-engagement-ring">Build Your Engagement Ring</a>`
     : slug === "chains"
@@ -2610,7 +2684,7 @@ function importedProductFields(product) {
       ["Backing Type", ["Screw back"]],
     ];
   }
-  if (["Engagement Rings", "Rings"].includes(category)) {
+  if (["Engagement Rings", "Rings", "Men's Rings", "Women's Rings", "Wedding Bands", "Men's Wedding Bands", "Women's Wedding Bands"].includes(category)) {
     return [
       ["Diamond Type", ["Natural Diamond", "Lab-Grown Diamond", "Not sure yet"]],
       ["Metal Type", quoteMetals],
@@ -2623,7 +2697,7 @@ function importedProductFields(product) {
       ["Hidden Birthstone Option", ["No hidden birthstone", "Add hidden birthstone", "Discuss with jeweler"]],
     ];
   }
-  if (category === "Earrings") {
+  if (["Earrings", "Women's Earrings", "Men's Earrings"].includes(category)) {
     return [
       ["Metal Type", quoteMetals],
       ["Stone Size", ["0.5 carat", "1 carat", "1.5 carat", "2 carat", "3 carat", "Custom stone size"]],
@@ -2650,7 +2724,7 @@ function importedProductFields(product) {
       ["Stone Option", ["Diamond", "Gemstone", "No stones", "Custom stone request"]],
     ];
   }
-  if (["Bracelets", "Tennis Bracelets"].includes(category)) {
+  if (["Bracelets", "Tennis Bracelets", "Anklets"].includes(category)) {
     return [
       ["Length", ["Starting at 7 inches", "7.5 inches", "8 inches", "Custom length"]],
       ["Metal Type", quoteMetals],
@@ -2795,16 +2869,24 @@ function importedProductDetail(product) {
   wireRequestForm("imported-product-inquiry-form", "Thank you for your submission. Your request has been received and is currently under review. We will contact you regarding pricing, design details, and next steps.");
 }
 
-const importCategories = ["Engagement Rings", "Rings", "Earrings", "Pendants / Charms", "Chains", "Tennis Bracelets", "Bracelets", "Watches", "Grillz", "Custom Jewelry", "Gold Buying / Services", "Custom Jewelry / Request Pricing"];
+const importCategories = ["Engagement Rings", "Rings", "Men's Rings", "Women's Rings", "Earrings", "Women's Earrings", "Men's Earrings", "Pendants / Charms", "Chains", "Tennis Bracelets", "Bracelets", "Anklets", "Wedding Bands", "Men's Wedding Bands", "Women's Wedding Bands", "Watches", "Grillz", "Custom Jewelry", "Gold Buying / Services", "Custom Jewelry / Request Pricing"];
 
 function normalizeImportCategory(category) {
   const value = String(category || "").trim().toLowerCase();
   if (["engagement ring", "engagement rings", "ring", "rings"].includes(value)) return "Engagement Rings";
+  if (["men's rings", "mens rings", "men rings"].includes(value)) return "Men's Rings";
+  if (["women's rings", "womens rings", "women rings"].includes(value)) return "Women's Rings";
   if (["tennis bracelet", "tennis bracelets"].includes(value)) return "Tennis Bracelets";
   if (["bracelet", "bracelets"].includes(value)) return "Bracelets";
+  if (["anklet", "anklets"].includes(value)) return "Anklets";
+  if (["wedding band", "wedding bands"].includes(value)) return "Wedding Bands";
+  if (["men's wedding bands", "mens wedding bands", "men wedding bands"].includes(value)) return "Men's Wedding Bands";
+  if (["women's wedding bands", "womens wedding bands", "women wedding bands"].includes(value)) return "Women's Wedding Bands";
   if (["chain", "chains"].includes(value)) return "Chains";
   if (["pendant", "pendants", "charm", "charms", "pendants / charms", "pendants/charms", "pendant / charm", "pendant/charm"].includes(value)) return "Pendants / Charms";
   if (["earring", "earrings", "stud", "studs"].includes(value)) return "Earrings";
+  if (["women's earrings", "womens earrings", "women earrings"].includes(value)) return "Women's Earrings";
+  if (["men's earrings", "mens earrings", "men earrings"].includes(value)) return "Men's Earrings";
   if (["grill", "grillz"].includes(value)) return "Grillz";
   if (["watch", "watches"].includes(value)) return "Watches";
   if (["custom", "custom jewelry"].includes(value)) return "Custom Jewelry";
@@ -2847,6 +2929,14 @@ function csvRowForFile(rows, fileName) {
 
 function inferCategory(text) {
   const value = text.toLowerCase();
+  if (/men'?s wedding band|mens wedding band|male wedding band/.test(value)) return "Men's Wedding Bands";
+  if (/women'?s wedding band|womens wedding band|female wedding band/.test(value)) return "Women's Wedding Bands";
+  if (/wedding band/.test(value)) return "Wedding Bands";
+  if (/men'?s ring|mens ring|male ring/.test(value)) return "Men's Rings";
+  if (/women'?s ring|womens ring|female ring/.test(value)) return "Women's Rings";
+  if (/anklet/.test(value)) return "Anklets";
+  if (/women'?s earring|womens earring|female earring|women'?s stud|womens stud|female stud/.test(value)) return "Women's Earrings";
+  if (/men'?s earring|mens earring|male earring|men'?s stud|mens stud|male stud/.test(value)) return "Men's Earrings";
   if (/engagement|ring|oval|marquise|radiant|solitaire/.test(value)) return "Engagement Rings";
   if (/tennis|bracelet/.test(value)) return "Tennis Bracelets";
   if (/chain|cuban|rope|franco/.test(value)) return "Chains";
