@@ -1733,15 +1733,15 @@ function startingText(product) {
 const categories = [
   ["select-diamond", "Live Diamond Selection", "diamond-banner.jpg"],
   ["engagement-rings", "Engagement Rings", "pink-oval-engagement-ring.jpeg"],
-  ["wedding-bands", "Wedding Bands", "mens-round-diamond-filigree-wedding-band.jpg"],
   ["pendants-charms", "Pendants / Charms", "saint-michael-diamond-angel-pendant.jpeg"],
-  ["chains", "Chains", "yellow-gold-rope-chain-triple.jpeg"],
-  ["necklaces", "Necklaces", "yellow-gold-cuban-chain-display.jpeg"],
   ["earrings", "Earrings", "princess-diamond-earrings.png"],
   ["bracelets", "Bracelets", "diamond-bracelet.png"],
   ["rings", "Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
+  ["wedding-bands", "Wedding Bands", "mens-round-diamond-filigree-wedding-band.jpg"],
   ["custom-jewelry", "Custom Jewelry", "custom-dejaun-diamond-name-pendant.jpeg"],
   ["watches", "Watches", "two-tone-rolex-datejust-diamond-dial.jpeg"],
+  ["chains", "Chains", "yellow-gold-rope-chain-triple.jpeg"],
+  ["necklaces", "Necklaces", "yellow-gold-cuban-chain-display.jpeg"],
   ["custom-orders", "Custom Orders", "don-logo.jpg"],
 ];
 
