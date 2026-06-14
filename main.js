@@ -190,6 +190,20 @@ const premiumStudProducts = [
   ],
 }));
 
+const gold14And18Metals = (base14, base18 = base14 + 300) => [
+  ["14K Yellow Gold", base14],
+  ["14K White Gold", base14],
+  ["14K Rose Gold", base14],
+  ["18K Yellow Gold", base18],
+  ["18K White Gold", base18],
+  ["18K Rose Gold", base18],
+];
+
+const gold14And18PlatinumMetals = (base14, base18 = base14 + 300, platinum = base14 + 625) => [
+  ...gold14And18Metals(base14, base18),
+  ["Platinum", platinum],
+];
+
 const products = [
   {
     id: "queen-aurelia-oval-marquise-ring",
@@ -442,6 +456,46 @@ const products = [
     fields: [["Diamond Size", baseCarats], ["Stone Shape", ["Oval"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Ring Size", ringSizes]],
   },
   {
+    id: "round-pear-three-stone-engagement-ring",
+    category: "Engagement Rings",
+    name: "Seraphina Round Pear Three-Stone Ring",
+    price: 1900,
+    estimate: 1900,
+    image: "round-pear-three-stone-engagement-ring.jpeg",
+    gallery: ["round-pear-three-stone-engagement-ring.jpeg", "round-pear-three-stone-engagement-ring-back.jpeg"],
+    alt: "Rose gold round diamond engagement ring with pear side stones on a black luxury background",
+    lede: "A round brilliant center diamond with pear side stones in a flowing rose-gold three-stone setting. Pricing follows the Eternal Marquise Halo Ring structure with 14K, 18K, and platinum options.",
+    cta: "Message Us for Custom Round Pear Three-Stone Ring",
+    badges: ["Engagement Ring", "Lab-Grown Diamond Option", "14K / 18K / Platinum", "Made to Order"],
+    fields: [["Diamond Size", baseCarats], ["Center Stone Shape", ["Round brilliant"]], ["Side Stone Shape", ["Pear side stones"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Ring Size", ringSizes]],
+  },
+  {
+    id: "radiant-solitaire-diamond-ring",
+    category: "Engagement Rings",
+    name: "Radiant Solitaire Diamond Ring",
+    price: 1475,
+    estimate: 1475,
+    image: "radiant-solitaire-diamond-ring.jpeg",
+    alt: "Radiant cut solitaire diamond engagement ring on a black luxury background",
+    lede: "A clean radiant cut solitaire engagement ring with a refined band profile. Select diamond size, color, clarity, metal, and ring size for a made-to-order quote.",
+    cta: "Message Us for Custom Radiant Solitaire Ring",
+    badges: ["Engagement Ring", "Radiant Cut", "Made to Order", "Financing Available"],
+    fields: [["Diamond Size", lunaCarats], ["Stone Shape", ["Radiant"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Ring Size", ringSizes]],
+  },
+  {
+    id: "teal-marquise-diamond-cluster-ring",
+    category: "Engagement Rings",
+    name: "Azure Marquise Diamond Cluster Ring",
+    price: 1300,
+    estimate: 1300,
+    image: "teal-marquise-diamond-cluster-ring.jpeg",
+    alt: "Teal marquise center stone ring with pear diamond side clusters",
+    lede: "A bold teal marquise center stone framed by pear diamond cluster accents. Final pricing varies by center stone, diamond quality, gold weight, and ring size.",
+    cta: "Message Us for Custom Azure Marquise Cluster Ring",
+    badges: ["Color Stone", "Diamond Accents", "Made to Order", "Custom Quote Available"],
+    fields: [["Center Stone", ["Teal marquise stone", "Blue sapphire", "Green emerald", "Ruby"]], ["Side Stones", ["Pear diamond clusters"]], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Metal", metals], ["Ring Size", ringSizes], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
     id: "celeste-halo",
     category: "Earrings",
     name: "Princess Diamond Studs",
@@ -552,6 +606,20 @@ const products = [
     },
     fields: [["Total Diamond Weight", earringCarats], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Type of Earring", ["Stud"]]],
   },
+  {
+    id: "round-diamond-huggie-earrings",
+    category: "Earrings",
+    name: "Aurora Round Diamond Huggie Earrings",
+    price: 1300,
+    estimate: 1300,
+    priceLabel: "Starting at $1,300",
+    image: "round-diamond-huggie-earrings.jpeg",
+    alt: "Yellow gold round diamond huggie hoop earrings on a black luxury background",
+    lede: "Round diamond huggie earrings with a polished gold center channel and diamond-set borders. Select metal and diamond coverage for a custom pair.",
+    cta: "Message Us for Custom Diamond Huggies",
+    badges: ["Diamond Huggies", "Made to Order", "14K / 18K / Platinum", "Financing Available"],
+    fields: [["Diamond Coverage", ["Classic diamond border", "Full diamond border", "Wide diamond border"]], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Metal", gold14And18PlatinumMetals(1300, 1600, 1950)], ["Back Type", ["Huggie clasp"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
   ...premiumStudProducts,
   {
     id: "marquise-arc",
@@ -591,6 +659,21 @@ const products = [
     cta: "Message Us for Custom Chain Design",
     extraCta: "Contact and Make a Special Request",
     fields: [["Chain Size", ["18 in", "20 in", "22 in", "24 in", "26 in", "30 in"]], ["Metal", ["Silver"]], ["Stone Type", ["Emerald", "Ruby", "Sapphire", "Diamond", "Aquamarine", "Tourmaline", "Topaz", "Amethyst", "Peridot"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Chain Style", ["Rope", "Cuban", "Tennis", "Box", "Figaro", "Mooncut", "Franco"]]],
+  },
+  {
+    id: "silver-crystal-rosary-necklace",
+    category: "Necklaces",
+    name: "Silver Crystal Rosary Necklace",
+    price: 0,
+    estimate: 0,
+    priceLabel: "Price available upon request",
+    image: "silver-crystal-rosary-necklace.jpeg",
+    alt: "Silver crystal rosary necklace with crucifix detail",
+    lede: "Silver-tone crystal rosary necklace with faceted bead stations and crucifix detail. Final pricing varies by metal, bead quality, chain length, and custom finish.",
+    cta: "Request Rosary Necklace Pricing",
+    badges: ["Rosary Necklace", "Custom Jewelry", "Request Pricing", "Made to Order"],
+    buttons: ["Request Price", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", ["Sterling Silver", "14K White Gold by request", "14K Yellow Gold by request"]], ["Bead Detail", ["Faceted crystal beads", "Gemstone beads by request"]], ["Necklace Length", ["Custom length"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "thirty-pointer-diamond-cross",
@@ -704,6 +787,21 @@ const products = [
     badges: ["Bracelets", "Gemstones", "14K Gold", "Made to Order"],
     buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
     fields: [["Metal", [["14K Yellow Gold", 1200], ["14K White Gold", 1200], ["14K Rose Gold", 1200], ["18K Yellow Gold", 1600], ["18K White Gold", 1600], ["18K Rose Gold", 1600]]], ["Bracelet Length", ["6.5 inches", "7 inches", "7.5 inches", "8 inches", "Custom Size - Message Request"]], ["Gemstone Mix", ["Blue topaz, peridot, pink tourmaline-style, and teal gemstones"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "emerald-clover-diamond-bracelet-set",
+    category: "Bracelets",
+    name: "Emerald Clover Diamond Bracelet Set",
+    price: 0,
+    estimate: 0,
+    priceLabel: "Price available upon request",
+    image: "emerald-clover-diamond-bracelet-set.jpeg",
+    alt: "Emerald clover diamond bracelet set in white yellow and rose gold",
+    lede: "Custom emerald clover bracelet set with diamond accents, available in white, yellow, or rose gold finishes. Final price varies by gold weight, emerald quality, diamond weight, size, and customization.",
+    cta: "Request Emerald Clover Bracelet Pricing",
+    badges: ["Bracelets", "Emerald", "Diamond Accents", "Custom Quote Required"],
+    buttons: ["Request Price", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", ["14K Yellow Gold", "14K White Gold", "14K Rose Gold", "18K Yellow Gold", "18K White Gold", "18K Rose Gold"]], ["Gemstone", ["Emerald clover stations"]], ["Diamond Type", ["Natural diamonds", "Lab-grown diamonds by request"]], ["Bracelet Length", ["Custom size"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "solene-diamond-paperclip-station-bracelet",
@@ -1067,6 +1165,127 @@ const products = [
     badges: ["Natural Sapphire", "Lab Diamonds", "Custom Ring", "Made to Order"],
     buttons: ["Request Price", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
     fields: [["Metal", metals], ["Ring Size", ringSizes], ["Center Stone", ["Sapphire", "Ruby", "Emerald"]], ["Accent Stones", ["Lab-grown diamonds"]], ["Finish", ["14K white gold", "14K yellow gold", "Custom finish"]], ["Specification Note", ["Final price varies by center stone, accent diamonds, gold color, gold weight, size, and customization."]]],
+  },
+  {
+    id: "emerald-radiance-gold-ring",
+    category: "Rings",
+    name: "Emerald Radiance Gold Ring",
+    price: 1500,
+    estimate: 1500,
+    priceLabel: "Starting at $1,500 in 14K gold",
+    image: "emerald-radiance-gold-ring.jpeg",
+    gallery: ["emerald-radiance-gold-ring.jpeg", "emerald-radiance-white-gold-ring.jpeg"],
+    alt: "Green emerald ring with diamond accent band on a black luxury background",
+    lede: "A green emerald center stone ring with diamond accents. 14K gold starts at $1,500 and 18K gold starts at $1,800.",
+    cta: "Request Emerald Ring Quote",
+    badges: ["Emerald", "Diamond Accents", "Women's Ring", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18Metals(1500, 1800)], ["Ring Size", ringSizes], ["Center Stone", ["Green emerald"]], ["Accent Stones", ["Diamond accent band"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "blue-topaz-half-eternity-band",
+    category: "Rings",
+    name: "Blue Topaz Half Eternity Band",
+    price: 1300,
+    estimate: 1300,
+    priceLabel: "Starting at $1,300",
+    image: "blue-topaz-half-eternity-band.jpeg",
+    alt: "Blue topaz half eternity band on a black luxury background",
+    lede: "A refined half eternity band with light blue gemstone stations. Select 14K or 18K gold and ring size for the final made-to-order price.",
+    cta: "Request Blue Topaz Band Quote",
+    badges: ["Blue Topaz", "Women's Ring", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18Metals(1300, 1600)], ["Ring Size", ringSizes], ["Gemstone", ["Blue topaz", "Aquamarine by request"]], ["Setting", ["Half eternity"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "petite-diamond-bloom-wrap-ring",
+    category: "Rings",
+    name: "Petite Diamond Bloom Wrap Ring",
+    price: 900,
+    estimate: 900,
+    priceLabel: "Starting at $900",
+    image: "petite-diamond-bloom-wrap-ring.jpeg",
+    alt: "Petite floral diamond wrap ring on a black luxury background",
+    lede: "A delicate floral-inspired diamond wrap ring with petite marquise-style flower accents. Select 14K or 18K gold and ring size.",
+    cta: "Request Petite Bloom Ring Quote",
+    badges: ["Diamond Accents", "Women's Ring", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18Metals(900, 1200)], ["Ring Size", ringSizes], ["Stone Style", ["Diamond floral accents"]], ["Finish", ["High polish"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "pear-diamond-open-bypass-ring",
+    category: "Rings",
+    name: "Pear Diamond Open Bypass Ring",
+    price: 1475,
+    estimate: 1475,
+    priceLabel: "Starting at $1,475",
+    image: "pear-diamond-open-bypass-ring.jpeg",
+    alt: "Open bypass ring with pear and round diamond stations on a black luxury background",
+    lede: "An open bypass ring with pear-shaped diamond stations and a round diamond accent. 18K gold adds $300 to the 14K starting price.",
+    cta: "Request Pear Bypass Ring Quote",
+    badges: ["Pear Diamonds", "Women's Ring", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18Metals(1475, 1775)], ["Ring Size", ringSizes], ["Stone Shape", ["Pear and round diamond stations"]], ["Design", ["Open bypass ring"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "marquise-leaf-diamond-ring",
+    category: "Rings",
+    name: "Marquise Leaf Diamond Ring",
+    price: 1300,
+    estimate: 1300,
+    priceLabel: "Starting at $1,300",
+    image: "marquise-leaf-diamond-ring.jpeg",
+    alt: "Leaf-inspired marquise diamond ring on a black luxury background",
+    lede: "A leaf-inspired ring with marquise diamond stations and pave accent leaves. Select 14K or 18K gold and ring size.",
+    cta: "Request Marquise Leaf Ring Quote",
+    badges: ["Marquise Diamonds", "Women's Ring", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18Metals(1300, 1600)], ["Ring Size", ringSizes], ["Stone Shape", ["Marquise diamonds", "Pave diamond leaves"]], ["Design", ["Leaf-inspired"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "radiant-cut-eternity-band",
+    category: "Wedding Bands",
+    name: "Radiant Cut Diamond Eternity Band",
+    price: 1800,
+    estimate: 1800,
+    priceLabel: "Starting at $1,800",
+    image: "radiant-cut-eternity-band.jpeg",
+    alt: "Radiant cut diamond eternity band on a black luxury background",
+    lede: "A radiant cut diamond eternity band with a clean shared-prong profile. Select metal, ring size, and diamond type for the final quote.",
+    cta: "Request Radiant Eternity Band Quote",
+    badges: ["Wedding Band", "Radiant Cut", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18PlatinumMetals(1800, 2100, 2450)], ["Ring Size", ringSizes], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Diamond Shape", ["Radiant cut"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "oval-diamond-eternity-band",
+    category: "Wedding Bands",
+    name: "Oval Diamond Eternity Band",
+    price: 1800,
+    estimate: 1800,
+    priceLabel: "Starting at $1,800",
+    image: "oval-diamond-eternity-band.jpeg",
+    alt: "Oval diamond eternity band on a black luxury background",
+    lede: "An oval diamond eternity band designed for a bright continuous profile. Select metal, ring size, and diamond type for the final quote.",
+    cta: "Request Oval Eternity Band Quote",
+    badges: ["Wedding Band", "Oval Diamonds", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18PlatinumMetals(1800, 2100, 2450)], ["Ring Size", ringSizes], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Diamond Shape", ["Oval cut"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+  },
+  {
+    id: "emerald-cut-diamond-eternity-band",
+    category: "Wedding Bands",
+    name: "Emerald Cut Diamond Eternity Band",
+    price: 1800,
+    estimate: 1800,
+    priceLabel: "Starting at $1,800",
+    image: "emerald-cut-diamond-eternity-band.jpeg",
+    alt: "Emerald cut diamond eternity band on a black luxury background",
+    lede: "An emerald cut diamond eternity band with step-cut brilliance and a polished shared-prong profile. Select metal, ring size, and diamond type.",
+    cta: "Request Emerald Cut Eternity Band Quote",
+    badges: ["Wedding Band", "Emerald Cut", "Made to Order"],
+    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
+    fields: [["Metal", gold14And18PlatinumMetals(1800, 2100, 2450)], ["Ring Size", ringSizes], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Diamond Shape", ["Emerald cut"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "baguette-diamond-letter-a-pendant",
@@ -1570,6 +1789,9 @@ const diamondOriginByProduct = {
   "radiant-solitaire-engagement-ring": "LGD",
   "emerald-accent-engagement-ring": "LGD",
   "imperial-bloom-engagement-ring": "LGD",
+  "round-pear-three-stone-engagement-ring": "LGD",
+  "radiant-solitaire-diamond-ring": "LGD",
+  "teal-marquise-diamond-cluster-ring": "LGD",
   "celeste-halo": "LGD",
   "round-diamond-studs": "LGD",
   "round-martini-diamond-studs": "LGD",
@@ -2071,19 +2293,22 @@ const womensColoredEarringIds = new Set([
   "yellow-canary-diamond-studs",
   "pink-monarch-diamond-studs",
   "blue-monarch-diamond-studs",
+  "round-diamond-huggie-earrings",
 ]);
 
 const mensRingIds = new Set([
   "yellow-gold-diamond-cuban-link-ring",
-  "white-gold-diamond-cuban-link-bracelet",
-  "yellow-gold-diamond-cuban-link-bracelet",
   "medusa-diamond-signet-ring",
+  "custom-blue-stone-gold-ring-photo",
 ]);
 
 const womensRingIds = new Set([
-  "gemstone-leaf-wedding-band-set",
-  "royal-sapphire-signet-ring",
   "celestial-diamond-sapphire-ring",
+  "emerald-radiance-gold-ring",
+  "blue-topaz-half-eternity-band",
+  "petite-diamond-bloom-wrap-ring",
+  "pear-diamond-open-bypass-ring",
+  "marquise-leaf-diamond-ring",
 ]);
 
 const mensWeddingBandIds = new Set([
@@ -2098,6 +2323,9 @@ const mensWeddingBandIds = new Set([
 const womensWeddingBandIds = new Set([
   "wedding-band",
   "gemstone-leaf-wedding-band-set",
+  "radiant-cut-eternity-band",
+  "oval-diamond-eternity-band",
+  "emerald-cut-diamond-eternity-band",
 ]);
 
 function categoryProducts(slug, label) {
@@ -2155,12 +2383,17 @@ function category(slug) {
   };
   const label = categories.find(([id]) => id === slug)?.[1] || categoryLabels[slug];
   const list = categoryProducts(slug, label);
+  const nonEngagementRingNotice = ["mens-rings", "womens-rings"].includes(slug)
+    ? "These are non-engagement rings. If you want an engagement ring or wedding band, please go to the Engagement Rings section or Wedding Bands section."
+    : "";
   const action = slug === "engagement-rings"
     ? `<a class="button button-gold" href="#/build-engagement-ring">Build Your Engagement Ring</a>`
     : slug === "chains"
       ? `<a class="button button-gold" href="#/product/build-your-own-diamond-tennis-chain">Build Your Tennis Chain</a>`
-      : "";
-  const body = slug === "engagement-rings" ? "All engagement rings include IGI or GIA certified diamond paperwork and an appraisal for the ring itself." : "";
+      : nonEngagementRingNotice
+        ? `<a class="button button-gold" href="#/category/engagement-rings">Engagement Rings</a><a class="button button-light" href="#/category/wedding-bands">Wedding Bands</a>`
+        : "";
+  const body = slug === "engagement-rings" ? "All engagement rings include IGI or GIA certified diamond paperwork and an appraisal for the ring itself." : nonEngagementRingNotice;
   productGrid(slug === "engagement-rings" ? engagementFirst(list) : list, names[slug] || `Shop ${label || "All Luxury Jewelry"} with The Don`, body, action);
 }
 
