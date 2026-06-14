@@ -92,17 +92,17 @@ const earringCarats = [
   ["6 carat", 4300],
 ];
 const premiumStudEarringCarats = [
-  ["1 carat", 1200],
-  ["1.5 carat", 1450],
-  ["2 carat", 1700],
-  ["2.5 carat", 1950],
-  ["3 carat", 2200],
-  ["3.5 carat", 2450],
-  ["4 carat", 2700],
-  ["4.5 carat", 2950],
-  ["5 carat", 3200],
-  ["5.5 carat", 3450],
-  ["6 carat", 3700],
+  ["1 carat", 1075],
+  ["1.5 carat", 1325],
+  ["2 carat", 1575],
+  ["2.5 carat", 1825],
+  ["3 carat", 2075],
+  ["3.5 carat", 2325],
+  ["4 carat", 2575],
+  ["4.5 carat", 2825],
+  ["5 carat", 3075],
+  ["5.5 carat", 3325],
+  ["6 carat", 3575],
 ];
 const monarchRingCarats = [
   ["1 carat", 1950],
@@ -168,15 +168,15 @@ const premiumStudProducts = [
   id,
   category: "Earrings",
   name,
-  price: 1200,
-  estimate: 1200,
-  priceLabel: "Starting at $1,200 for 1 carat",
+  price: 1075,
+  estimate: 1075,
+  priceLabel: "Starting at $1,075 for 1 carat",
   image,
   alt,
-  lede: `${name} with screw-back posts, starting at $1,200 for 1 carat total weight. Select total carat weight from 1 to 6 carats, diamond quality, and metal. Final pricing updates by carat weight and metal, with natural diamonds available by request.`,
+  lede: `${name} with screw-back posts, starting at $1,075 for 1 carat total weight. Select total carat weight from 1 to 6 carats, diamond quality, and metal. Final pricing updates by carat weight and metal, with natural diamonds available by request.`,
   cta: `Message Us for Custom ${shape} Stud Earrings`,
   metalSurcharges: premiumStudMetalSurcharges,
-  badges: ["Diamond Studs", "Screw Backs", "Starting at $1,200", "Made to Order"],
+  badges: ["Diamond Studs", "Screw Backs", "Starting at $1,075", "Made to Order"],
   buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
   fields: [
     ["Total Diamond Weight", premiumStudEarringCarats],
@@ -1653,16 +1653,16 @@ function startingText(product) {
 }
 
 const categories = [
-  ["rings", "Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
-  ["engagement-rings", "Engagement Rings", "engagement-ring-feature.jpg"],
   ["select-diamond", "Live Diamond Selection", "diamond-banner.jpg"],
-  ["wedding-bands", "Wedding Bands", "mens-royal-filigree-princess-channel-wedding-band.jpg"],
-  ["necklaces", "Necklaces", "yellow-gold-cuban-chain-display.jpeg"],
-  ["chains", "Chains", "yellow-gold-rope-chain-triple.jpeg"],
+  ["engagement-rings", "Engagement Rings", "pink-oval-engagement-ring.jpeg"],
+  ["wedding-bands", "Wedding Bands", "mens-round-diamond-filigree-wedding-band.jpg"],
   ["pendants-charms", "Pendants / Charms", "saint-michael-diamond-angel-pendant.jpeg"],
+  ["chains", "Chains", "yellow-gold-rope-chain-triple.jpeg"],
+  ["necklaces", "Necklaces", "yellow-gold-cuban-chain-display.jpeg"],
+  ["earrings", "Earrings", "princess-diamond-earrings.png"],
+  ["bracelets", "Bracelets", "diamond-bracelet.png"],
+  ["rings", "Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
   ["custom-jewelry", "Custom Jewelry", "custom-dejaun-diamond-name-pendant.jpeg"],
-  ["earrings", "Earrings", "round-cluster-diamond-stud-earrings-close.jpeg"],
-  ["bracelets", "Bracelets", "yellow-gold-rope-bracelet.jpeg"],
   ["watches", "Watches", "two-tone-rolex-datejust-diamond-dial.jpeg"],
   ["custom-orders", "Custom Orders", "don-logo.jpg"],
 ];
@@ -1940,7 +1940,7 @@ function home() {
         </div>
         <div class="collection-grid">
           ${categories.map(([slug, name, image]) => `
-            <a class="collection-tile" href="#/${slug === "custom-orders" ? "custom-orders" : `category/${slug}`}">
+            <a class="collection-tile" href="#/${slug === "custom-orders" || slug === "select-diamond" ? slug : `category/${slug}`}">
               <img src="${asset(image)}" alt="${name}" ${imageSafety}>
               <span>${name}</span>
             </a>
