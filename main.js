@@ -190,20 +190,6 @@ const premiumStudProducts = [
   ],
 }));
 
-const gold14And18Metals = (base14, base18 = base14 + 300) => [
-  ["14K Yellow Gold", base14],
-  ["14K White Gold", base14],
-  ["14K Rose Gold", base14],
-  ["18K Yellow Gold", base18],
-  ["18K White Gold", base18],
-  ["18K Rose Gold", base18],
-];
-
-const gold14And18PlatinumMetals = (base14, base18 = base14 + 300, platinum = base14 + 625) => [
-  ...gold14And18Metals(base14, base18),
-  ["Platinum", platinum],
-];
-
 const products = [
   {
     id: "queen-aurelia-oval-marquise-ring",
@@ -456,46 +442,6 @@ const products = [
     fields: [["Diamond Size", baseCarats], ["Stone Shape", ["Oval"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Ring Size", ringSizes]],
   },
   {
-    id: "round-pear-three-stone-engagement-ring",
-    category: "Engagement Rings",
-    name: "Seraphina Round Pear Three-Stone Ring",
-    price: 1900,
-    estimate: 1900,
-    image: "round-pear-three-stone-engagement-ring.jpeg",
-    gallery: ["round-pear-three-stone-engagement-ring.jpeg", "round-pear-three-stone-engagement-ring-back.jpeg"],
-    alt: "Rose gold round diamond engagement ring with pear side stones on a black luxury background",
-    lede: "A round brilliant center diamond with pear side stones in a flowing rose-gold three-stone setting. Pricing follows the Eternal Marquise Halo Ring structure with 14K, 18K, and platinum options.",
-    cta: "Message Us for Custom Round Pear Three-Stone Ring",
-    badges: ["Engagement Ring", "Lab-Grown Diamond Option", "14K / 18K / Platinum", "Made to Order"],
-    fields: [["Diamond Size", baseCarats], ["Center Stone Shape", ["Round brilliant"]], ["Side Stone Shape", ["Pear side stones"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Ring Size", ringSizes]],
-  },
-  {
-    id: "radiant-solitaire-diamond-ring",
-    category: "Engagement Rings",
-    name: "Radiant Solitaire Diamond Ring",
-    price: 1475,
-    estimate: 1475,
-    image: "radiant-solitaire-diamond-ring.jpeg",
-    alt: "Radiant cut solitaire diamond engagement ring on a black luxury background",
-    lede: "A clean radiant cut solitaire engagement ring with a refined band profile. Select diamond size, color, clarity, metal, and ring size for a made-to-order quote.",
-    cta: "Message Us for Custom Radiant Solitaire Ring",
-    badges: ["Engagement Ring", "Radiant Cut", "Made to Order", "Financing Available"],
-    fields: [["Diamond Size", lunaCarats], ["Stone Shape", ["Radiant"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Ring Size", ringSizes]],
-  },
-  {
-    id: "teal-marquise-diamond-cluster-ring",
-    category: "Engagement Rings",
-    name: "Azure Marquise Diamond Cluster Ring",
-    price: 1300,
-    estimate: 1300,
-    image: "teal-marquise-diamond-cluster-ring.jpeg",
-    alt: "Teal marquise center stone ring with pear diamond side clusters",
-    lede: "A bold teal marquise center stone framed by pear diamond cluster accents. Final pricing varies by center stone, diamond quality, gold weight, and ring size.",
-    cta: "Message Us for Custom Azure Marquise Cluster Ring",
-    badges: ["Color Stone", "Diamond Accents", "Made to Order", "Custom Quote Available"],
-    fields: [["Center Stone", ["Teal marquise stone", "Blue sapphire", "Green emerald", "Ruby"]], ["Side Stones", ["Pear diamond clusters"]], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Metal", metals], ["Ring Size", ringSizes], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
     id: "celeste-halo",
     category: "Earrings",
     name: "Princess Diamond Studs",
@@ -606,20 +552,6 @@ const products = [
     },
     fields: [["Total Diamond Weight", earringCarats], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Metal", metals], ["Type of Earring", ["Stud"]]],
   },
-  {
-    id: "round-diamond-huggie-earrings",
-    category: "Earrings",
-    name: "Aurora Round Diamond Huggie Earrings",
-    price: 1300,
-    estimate: 1300,
-    priceLabel: "Starting at $1,300",
-    image: "round-diamond-huggie-earrings.jpeg",
-    alt: "Yellow gold round diamond huggie hoop earrings on a black luxury background",
-    lede: "Round diamond huggie earrings with a polished gold center channel and diamond-set borders. Select metal and diamond coverage for a custom pair.",
-    cta: "Message Us for Custom Diamond Huggies",
-    badges: ["Diamond Huggies", "Made to Order", "14K / 18K / Platinum", "Financing Available"],
-    fields: [["Diamond Coverage", ["Classic diamond border", "Full diamond border", "Wide diamond border"]], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Metal", gold14And18PlatinumMetals(1300, 1600, 1950)], ["Back Type", ["Huggie clasp"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
   ...premiumStudProducts,
   {
     id: "marquise-arc",
@@ -659,21 +591,6 @@ const products = [
     cta: "Message Us for Custom Chain Design",
     extraCta: "Contact and Make a Special Request",
     fields: [["Chain Size", ["18 in", "20 in", "22 in", "24 in", "26 in", "30 in"]], ["Metal", ["Silver"]], ["Stone Type", ["Emerald", "Ruby", "Sapphire", "Diamond", "Aquamarine", "Tourmaline", "Topaz", "Amethyst", "Peridot"]], ["Diamond Color", ["D", "E", "F"]], ["Clarity", ["VVS", "VS"]], ["Chain Style", ["Rope", "Cuban", "Tennis", "Box", "Figaro", "Mooncut", "Franco"]]],
-  },
-  {
-    id: "silver-crystal-rosary-necklace",
-    category: "Necklaces",
-    name: "Silver Crystal Rosary Necklace",
-    price: 0,
-    estimate: 0,
-    priceLabel: "Price available upon request",
-    image: "silver-crystal-rosary-necklace.jpeg",
-    alt: "Silver crystal rosary necklace with crucifix detail",
-    lede: "Silver-tone crystal rosary necklace with faceted bead stations and crucifix detail. Final pricing varies by metal, bead quality, chain length, and custom finish.",
-    cta: "Request Rosary Necklace Pricing",
-    badges: ["Rosary Necklace", "Custom Jewelry", "Request Pricing", "Made to Order"],
-    buttons: ["Request Price", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", ["Sterling Silver", "14K White Gold by request", "14K Yellow Gold by request"]], ["Bead Detail", ["Faceted crystal beads", "Gemstone beads by request"]], ["Necklace Length", ["Custom length"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "thirty-pointer-diamond-cross",
@@ -745,33 +662,33 @@ const products = [
   },
   {
     id: "lumiere-pearl-paperclip-bracelet",
-    category: "Anklets",
-    name: "Lumiere Pearl Paperclip Anklet",
+    category: "Bracelets",
+    name: "Lumiere Pearl Paperclip Bracelet",
     price: 1100,
     estimate: 1100,
     priceLabel: "Starting at $1,100 in 14K gold",
     image: "bracelet-04.png",
-    alt: "Gold paperclip anklet with pearl stations on a black satin background",
-    lede: "Made-to-order pearl paperclip anklet in 14K gold with luminous pearl stations and adjustable chain detail. Available in 14K or 18K gold only.",
-    cta: "Request Pearl Anklet Quote",
-    badges: ["Anklets", "Pearls", "14K Gold", "Made to Order"],
+    alt: "Gold paperclip bracelet with pearl stations on a black satin background",
+    lede: "Made-to-order pearl paperclip bracelet in 14K gold with luminous pearl stations and adjustable chain detail. Available in 14K or 18K gold only.",
+    cta: "Request Pearl Bracelet Quote",
+    badges: ["Bracelets", "Pearls", "14K Gold", "Made to Order"],
     buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", [["14K Yellow Gold", 1100], ["14K White Gold", 1100], ["14K Rose Gold", 1100], ["18K Yellow Gold", 1500], ["18K White Gold", 1500], ["18K Rose Gold", 1500]]], ["Anklet Length", ["8.5 inches", "9 inches", "9.5 inches", "10 inches", "Custom Size - Message Request"]], ["Pearl Detail", ["Pearl stations"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+    fields: [["Metal", [["14K Yellow Gold", 1100], ["14K White Gold", 1100], ["14K Rose Gold", 1100], ["18K Yellow Gold", 1500], ["18K White Gold", 1500], ["18K Rose Gold", 1500]]], ["Bracelet Length", ["6.5 inches", "7 inches", "7.5 inches", "8 inches", "Custom Size - Message Request"]], ["Pearl Detail", ["Pearl stations"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "fleur-diamond-cluster-station-bracelet",
-    category: "Anklets",
-    name: "Fleur Diamond Constellation Anklet",
+    category: "Bracelets",
+    name: "Fleur Diamond Cluster Station Bracelet",
     price: 1000,
     estimate: 1000,
     priceLabel: "Starting at $1,000 in 14K gold",
     image: "bracelet-05.png",
-    alt: "Gold lab diamond constellation station anklet on black satin",
-    lede: "Made-to-order 14K lab-grown diamond constellation anklet with floral diamond stations and an estimated 0.55 to 0.75 CTW, depending on anklet length and final stone layout. Platinum is available by custom quote.",
-    cta: "Request Fleur Anklet Quote",
-    badges: ["Anklets", "Lab Diamonds", "Constellation Detail", "Made to Order"],
+    alt: "Gold lab diamond flower cluster station bracelet on black satin",
+    lede: "Made-to-order 14K lab-grown diamond cluster station bracelet with floral diamond stations and an estimated 0.55 to 0.75 CTW, depending on bracelet length and final stone layout. Platinum is available by custom quote.",
+    cta: "Request Fleur Bracelet Quote",
+    badges: ["Bracelets", "Lab Diamonds", "Cluster Detail", "Made to Order"],
     buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", [["14K Yellow Gold", 1000], ["14K White Gold", 1000], ["14K Rose Gold", 1000], ["18K Yellow Gold", 1350], ["18K White Gold", 1350], ["18K Rose Gold", 1350]]], ["Anklet Length", ["8.5 inches", "9 inches", "9.5 inches", "10 inches", "Custom Size - Message Request"]], ["Diamond Type", ["Lab-Grown Diamond"]], ["Estimated Diamond Weight", ["Approx. 0.55 to 0.75 CTW"]], ["Platinum Option", ["Available by custom quote"]], ["Specification Note", ["Weight varies. Request weight details."]]],
+    fields: [["Metal", [["14K Yellow Gold", 1000], ["14K White Gold", 1000], ["14K Rose Gold", 1000], ["18K Yellow Gold", 1350], ["18K White Gold", 1350], ["18K Rose Gold", 1350]]], ["Bracelet Length", ["6.5 inches", "7 inches", "7.5 inches", "8 inches", "Custom Size - Message Request"]], ["Diamond Type", ["Lab-Grown Diamond"]], ["Estimated Diamond Weight", ["Approx. 0.55 to 0.75 CTW"]], ["Platinum Option", ["Available by custom quote"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "aurora-multi-gemstone-paperclip-bracelet",
@@ -787,21 +704,6 @@ const products = [
     badges: ["Bracelets", "Gemstones", "14K Gold", "Made to Order"],
     buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
     fields: [["Metal", [["14K Yellow Gold", 1200], ["14K White Gold", 1200], ["14K Rose Gold", 1200], ["18K Yellow Gold", 1600], ["18K White Gold", 1600], ["18K Rose Gold", 1600]]], ["Bracelet Length", ["6.5 inches", "7 inches", "7.5 inches", "8 inches", "Custom Size - Message Request"]], ["Gemstone Mix", ["Blue topaz, peridot, pink tourmaline-style, and teal gemstones"]], ["Production", ["Made to Order"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "emerald-clover-diamond-bracelet-set",
-    category: "Bracelets",
-    name: "Emerald Clover Diamond Bracelet Set",
-    price: 0,
-    estimate: 0,
-    priceLabel: "Price available upon request",
-    image: "emerald-clover-diamond-bracelet-set.jpeg",
-    alt: "Emerald clover diamond bracelet set in white yellow and rose gold",
-    lede: "Custom emerald clover bracelet set with diamond accents, available in white, yellow, or rose gold finishes. Final price varies by gold weight, emerald quality, diamond weight, size, and customization.",
-    cta: "Request Emerald Clover Bracelet Pricing",
-    badges: ["Bracelets", "Emerald", "Diamond Accents", "Custom Quote Required"],
-    buttons: ["Request Price", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", ["14K Yellow Gold", "14K White Gold", "14K Rose Gold", "18K Yellow Gold", "18K White Gold", "18K Rose Gold"]], ["Gemstone", ["Emerald clover stations"]], ["Diamond Type", ["Natural diamonds", "Lab-grown diamonds by request"]], ["Bracelet Length", ["Custom size"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "solene-diamond-paperclip-station-bracelet",
@@ -1165,127 +1067,6 @@ const products = [
     badges: ["Natural Sapphire", "Lab Diamonds", "Custom Ring", "Made to Order"],
     buttons: ["Request Price", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
     fields: [["Metal", metals], ["Ring Size", ringSizes], ["Center Stone", ["Sapphire", "Ruby", "Emerald"]], ["Accent Stones", ["Lab-grown diamonds"]], ["Finish", ["14K white gold", "14K yellow gold", "Custom finish"]], ["Specification Note", ["Final price varies by center stone, accent diamonds, gold color, gold weight, size, and customization."]]],
-  },
-  {
-    id: "emerald-radiance-gold-ring",
-    category: "Rings",
-    name: "Emerald Radiance Gold Ring",
-    price: 1500,
-    estimate: 1500,
-    priceLabel: "Starting at $1,500 in 14K gold",
-    image: "emerald-radiance-gold-ring.jpeg",
-    gallery: ["emerald-radiance-gold-ring.jpeg", "emerald-radiance-white-gold-ring.jpeg"],
-    alt: "Green emerald ring with diamond accent band on a black luxury background",
-    lede: "A green emerald center stone ring with diamond accents. 14K gold starts at $1,500 and 18K gold starts at $1,800.",
-    cta: "Request Emerald Ring Quote",
-    badges: ["Emerald", "Diamond Accents", "Women's Ring", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18Metals(1500, 1800)], ["Ring Size", ringSizes], ["Center Stone", ["Green emerald"]], ["Accent Stones", ["Diamond accent band"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "blue-topaz-half-eternity-band",
-    category: "Rings",
-    name: "Blue Topaz Half Eternity Band",
-    price: 1300,
-    estimate: 1300,
-    priceLabel: "Starting at $1,300",
-    image: "blue-topaz-half-eternity-band.jpeg",
-    alt: "Blue topaz half eternity band on a black luxury background",
-    lede: "A refined half eternity band with light blue gemstone stations. Select 14K or 18K gold and ring size for the final made-to-order price.",
-    cta: "Request Blue Topaz Band Quote",
-    badges: ["Blue Topaz", "Women's Ring", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18Metals(1300, 1600)], ["Ring Size", ringSizes], ["Gemstone", ["Blue topaz", "Aquamarine by request"]], ["Setting", ["Half eternity"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "petite-diamond-bloom-wrap-ring",
-    category: "Rings",
-    name: "Petite Diamond Bloom Wrap Ring",
-    price: 900,
-    estimate: 900,
-    priceLabel: "Starting at $900",
-    image: "petite-diamond-bloom-wrap-ring.jpeg",
-    alt: "Petite floral diamond wrap ring on a black luxury background",
-    lede: "A delicate floral-inspired diamond wrap ring with petite marquise-style flower accents. Select 14K or 18K gold and ring size.",
-    cta: "Request Petite Bloom Ring Quote",
-    badges: ["Diamond Accents", "Women's Ring", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18Metals(900, 1200)], ["Ring Size", ringSizes], ["Stone Style", ["Diamond floral accents"]], ["Finish", ["High polish"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "pear-diamond-open-bypass-ring",
-    category: "Rings",
-    name: "Pear Diamond Open Bypass Ring",
-    price: 1475,
-    estimate: 1475,
-    priceLabel: "Starting at $1,475",
-    image: "pear-diamond-open-bypass-ring.jpeg",
-    alt: "Open bypass ring with pear and round diamond stations on a black luxury background",
-    lede: "An open bypass ring with pear-shaped diamond stations and a round diamond accent. 18K gold adds $300 to the 14K starting price.",
-    cta: "Request Pear Bypass Ring Quote",
-    badges: ["Pear Diamonds", "Women's Ring", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18Metals(1475, 1775)], ["Ring Size", ringSizes], ["Stone Shape", ["Pear and round diamond stations"]], ["Design", ["Open bypass ring"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "marquise-leaf-diamond-ring",
-    category: "Rings",
-    name: "Marquise Leaf Diamond Ring",
-    price: 1300,
-    estimate: 1300,
-    priceLabel: "Starting at $1,300",
-    image: "marquise-leaf-diamond-ring.jpeg",
-    alt: "Leaf-inspired marquise diamond ring on a black luxury background",
-    lede: "A leaf-inspired ring with marquise diamond stations and pave accent leaves. Select 14K or 18K gold and ring size.",
-    cta: "Request Marquise Leaf Ring Quote",
-    badges: ["Marquise Diamonds", "Women's Ring", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18Metals(1300, 1600)], ["Ring Size", ringSizes], ["Stone Shape", ["Marquise diamonds", "Pave diamond leaves"]], ["Design", ["Leaf-inspired"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "radiant-cut-eternity-band",
-    category: "Wedding Bands",
-    name: "Radiant Cut Diamond Eternity Band",
-    price: 1800,
-    estimate: 1800,
-    priceLabel: "Starting at $1,800",
-    image: "radiant-cut-eternity-band.jpeg",
-    alt: "Radiant cut diamond eternity band on a black luxury background",
-    lede: "A radiant cut diamond eternity band with a clean shared-prong profile. Select metal, ring size, and diamond type for the final quote.",
-    cta: "Request Radiant Eternity Band Quote",
-    badges: ["Wedding Band", "Radiant Cut", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18PlatinumMetals(1800, 2100, 2450)], ["Ring Size", ringSizes], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Diamond Shape", ["Radiant cut"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "oval-diamond-eternity-band",
-    category: "Wedding Bands",
-    name: "Oval Diamond Eternity Band",
-    price: 1800,
-    estimate: 1800,
-    priceLabel: "Starting at $1,800",
-    image: "oval-diamond-eternity-band.jpeg",
-    alt: "Oval diamond eternity band on a black luxury background",
-    lede: "An oval diamond eternity band designed for a bright continuous profile. Select metal, ring size, and diamond type for the final quote.",
-    cta: "Request Oval Eternity Band Quote",
-    badges: ["Wedding Band", "Oval Diamonds", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18PlatinumMetals(1800, 2100, 2450)], ["Ring Size", ringSizes], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Diamond Shape", ["Oval cut"]], ["Specification Note", ["Weight varies. Request weight details."]]],
-  },
-  {
-    id: "emerald-cut-diamond-eternity-band",
-    category: "Wedding Bands",
-    name: "Emerald Cut Diamond Eternity Band",
-    price: 1800,
-    estimate: 1800,
-    priceLabel: "Starting at $1,800",
-    image: "emerald-cut-diamond-eternity-band.jpeg",
-    alt: "Emerald cut diamond eternity band on a black luxury background",
-    lede: "An emerald cut diamond eternity band with step-cut brilliance and a polished shared-prong profile. Select metal, ring size, and diamond type.",
-    cta: "Request Emerald Cut Eternity Band Quote",
-    badges: ["Wedding Band", "Emerald Cut", "Made to Order"],
-    buttons: ["Add to Cart", "Request Exact Weight & Specifications", "Custom Order Inquiry", "Financing Available"],
-    fields: [["Metal", gold14And18PlatinumMetals(1800, 2100, 2450)], ["Ring Size", ringSizes], ["Diamond Type", ["Lab-Grown Diamond", "Natural Diamond"]], ["Diamond Shape", ["Emerald cut"]], ["Specification Note", ["Weight varies. Request weight details."]]],
   },
   {
     id: "baguette-diamond-letter-a-pendant",
@@ -1789,9 +1570,6 @@ const diamondOriginByProduct = {
   "radiant-solitaire-engagement-ring": "LGD",
   "emerald-accent-engagement-ring": "LGD",
   "imperial-bloom-engagement-ring": "LGD",
-  "round-pear-three-stone-engagement-ring": "LGD",
-  "radiant-solitaire-diamond-ring": "LGD",
-  "teal-marquise-diamond-cluster-ring": "LGD",
   "celeste-halo": "LGD",
   "round-diamond-studs": "LGD",
   "round-martini-diamond-studs": "LGD",
@@ -1955,21 +1733,15 @@ function startingText(product) {
 const categories = [
   ["select-diamond", "Live Diamond Selection", "diamond-banner.jpg"],
   ["engagement-rings", "Engagement Rings", "pink-oval-engagement-ring.jpeg"],
-  ["pendants-charms", "Pendants / Charms", "saint-michael-diamond-angel-pendant.jpeg"],
-  ["womens-earrings", "Women's Earrings", "pink-monarch-diamond-studs.jpeg"],
-  ["mens-earrings", "Men's Earrings", "princess-diamond-earrings.png"],
-  ["bracelets", "Bracelets", "diamond-bracelet.png"],
-  ["anklets", "Anklets", "bracelet-04.png"],
-  ["rings", "Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
-  ["mens-rings", "Men's Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
-  ["womens-rings", "Women's Rings", "celestial-diamond-sapphire-ring.jpeg"],
   ["wedding-bands", "Wedding Bands", "mens-round-diamond-filigree-wedding-band.jpg"],
-  ["mens-wedding-bands", "Men's Wedding Bands", "mens-round-diamond-filigree-wedding-band.jpg"],
-  ["womens-wedding-bands", "Women's Wedding Bands", "gold-engagement-rings.png"],
-  ["custom-jewelry", "Custom Jewelry", "custom-dejaun-diamond-name-pendant.jpeg"],
-  ["watches", "Watches", "two-tone-rolex-datejust-diamond-dial.jpeg"],
+  ["pendants-charms", "Pendants / Charms", "saint-michael-diamond-angel-pendant.jpeg"],
   ["chains", "Chains", "yellow-gold-rope-chain-triple.jpeg"],
   ["necklaces", "Necklaces", "yellow-gold-cuban-chain-display.jpeg"],
+  ["earrings", "Earrings", "princess-diamond-earrings.png"],
+  ["bracelets", "Bracelets", "diamond-bracelet.png"],
+  ["rings", "Rings", "yellow-gold-diamond-cuban-link-ring.jpeg"],
+  ["custom-jewelry", "Custom Jewelry", "custom-dejaun-diamond-name-pendant.jpeg"],
+  ["watches", "Watches", "two-tone-rolex-datejust-diamond-dial.jpeg"],
   ["custom-orders", "Custom Orders", "don-logo.jpg"],
 ];
 
@@ -2034,10 +1806,8 @@ function navLinks() {
     <a href="#/category/chains">Chains</a>
     <a href="#/category/pendants-charms">Pendants / Charms</a>
     <a href="#/category/custom-jewelry">Custom Jewelry</a>
-    <a href="#/category/womens-earrings">Women's Earrings</a>
-    <a href="#/category/mens-earrings">Men's Earrings</a>
+    <a href="#/category/earrings">Earrings</a>
     <a href="#/category/bracelets">Bracelets</a>
-    <a href="#/category/anklets">Anklets</a>
     <a href="#/category/watches">Watches</a>
     <a class="nav-highlight" href="#/custom-orders">Custom Orders</a>
     <a href="#/cart">Cart <span class="cart-pill">${cart.length}</span></a>
@@ -2276,73 +2046,6 @@ function productGrid(list, title, body = "", action = "") {
   `);
 }
 
-const sharedStudEarringIds = new Set([
-  "celeste-halo",
-  "round-diamond-studs",
-  "round-martini-diamond-studs",
-  "round-cluster-diamond-stud-earrings",
-  "asscher-diamond-stud-earrings",
-  "cushion-diamond-stud-earrings",
-  "emerald-diamond-stud-earrings",
-  "oval-diamond-stud-earrings",
-  "pear-diamond-stud-earrings",
-  "round-brilliant-diamond-stud-earrings",
-]);
-
-const womensColoredEarringIds = new Set([
-  "yellow-canary-diamond-studs",
-  "pink-monarch-diamond-studs",
-  "blue-monarch-diamond-studs",
-  "round-diamond-huggie-earrings",
-]);
-
-const mensRingIds = new Set([
-  "yellow-gold-diamond-cuban-link-ring",
-  "medusa-diamond-signet-ring",
-  "custom-blue-stone-gold-ring-photo",
-]);
-
-const womensRingIds = new Set([
-  "celestial-diamond-sapphire-ring",
-  "emerald-radiance-gold-ring",
-  "blue-topaz-half-eternity-band",
-  "petite-diamond-bloom-wrap-ring",
-  "pear-diamond-open-bypass-ring",
-  "marquise-leaf-diamond-ring",
-]);
-
-const mensWeddingBandIds = new Set([
-  "mens-royal-filigree-princess-channel-wedding-band",
-  "mens-white-gold-asscher-channel-wedding-band",
-  "mens-pear-cut-filigree-diamond-wedding-band",
-  "mens-asscher-cut-filigree-diamond-wedding-band",
-  "mens-engraved-satin-filigree-wedding-band",
-  "mens-round-diamond-filigree-wedding-band",
-]);
-
-const womensWeddingBandIds = new Set([
-  "wedding-band",
-  "gemstone-leaf-wedding-band-set",
-  "radiant-cut-eternity-band",
-  "oval-diamond-eternity-band",
-  "emerald-cut-diamond-eternity-band",
-]);
-
-function categoryProducts(slug, label) {
-  const products = allProducts();
-  if (slug === "pendants-charms") return products.filter((p) => ["Pendants / Charms", "Pendants"].includes(p.category) || ["silver-cross-chain", "marquise-arc"].includes(p.id));
-  if (slug === "bracelets") return products.filter((p) => ["Bracelets", "Tennis Bracelets"].includes(p.category));
-  if (slug === "anklets") return products.filter((p) => p.category === "Anklets");
-  if (slug === "earrings") return products.filter((p) => p.category === "Earrings");
-  if (slug === "womens-earrings") return products.filter((p) => sharedStudEarringIds.has(p.id) || womensColoredEarringIds.has(p.id));
-  if (slug === "mens-earrings") return products.filter((p) => sharedStudEarringIds.has(p.id));
-  if (slug === "mens-rings") return products.filter((p) => mensRingIds.has(p.id));
-  if (slug === "womens-rings") return products.filter((p) => womensRingIds.has(p.id));
-  if (slug === "mens-wedding-bands") return products.filter((p) => mensWeddingBandIds.has(p.id));
-  if (slug === "womens-wedding-bands") return products.filter((p) => womensWeddingBandIds.has(p.id));
-  return products.filter((p) => p.category === label);
-}
-
 function category(slug) {
   if (slug === "select-diamond") return diamondInventoryPage();
   const categoryLabels = {
@@ -2352,8 +2055,6 @@ function category(slug) {
     watches: "Watches",
     "custom-jewelry": "Custom Jewelry",
     "gold-buying-services": "Gold Buying / Services",
-    earrings: "Earrings",
-    anklets: "Anklets",
   };
   const engagementFirst = (list) => [...list].sort((a, b) => {
     if (a.category === "Engagement Rings" && b.category !== "Engagement Rings") return -1;
@@ -2368,32 +2069,24 @@ function category(slug) {
     "engagement-rings": "Build your engagement ring with The Don",
     "select-diamond": "Live Diamond Selection",
     "wedding-bands": "Shop Wedding Bands with The Don",
-    "mens-wedding-bands": "Shop Men's Wedding Bands with The Don",
-    "womens-wedding-bands": "Shop Women's Wedding Bands with The Don",
-    "mens-rings": "Shop Men's Rings with The Don",
-    "womens-rings": "Shop Women's Rings with The Don",
     necklaces: "Shop Necklaces with The Don",
     chains: "Shop Chains with The Don",
     earrings: "Shop Earrings with The Don",
-    "womens-earrings": "Shop Women's Earrings with The Don",
-    "mens-earrings": "Shop Men's Earrings with The Don",
     bracelets: "Shop Bracelets with The Don",
-    anklets: "Shop Anklets with The Don",
     "pendants-charms": "Shop Pendants / Charms with The Don",
   };
   const label = categories.find(([id]) => id === slug)?.[1] || categoryLabels[slug];
-  const list = categoryProducts(slug, label);
-  const nonEngagementRingNotice = ["mens-rings", "womens-rings"].includes(slug)
-    ? "These are non-engagement rings. If you want an engagement ring or wedding band, please go to the Engagement Rings section or Wedding Bands section."
-    : "";
+  const list = slug === "pendants-charms"
+    ? allProducts().filter((p) => ["Pendants / Charms", "Pendants"].includes(p.category) || ["silver-cross-chain", "marquise-arc"].includes(p.id))
+    : slug === "bracelets"
+      ? allProducts().filter((p) => ["Bracelets", "Tennis Bracelets"].includes(p.category))
+      : allProducts().filter((p) => p.category === label);
   const action = slug === "engagement-rings"
     ? `<a class="button button-gold" href="#/build-engagement-ring">Build Your Engagement Ring</a>`
     : slug === "chains"
       ? `<a class="button button-gold" href="#/product/build-your-own-diamond-tennis-chain">Build Your Tennis Chain</a>`
-      : nonEngagementRingNotice
-        ? `<a class="button button-gold" href="#/category/engagement-rings">Engagement Rings</a><a class="button button-light" href="#/category/wedding-bands">Wedding Bands</a>`
-        : "";
-  const body = slug === "engagement-rings" ? "All engagement rings include IGI or GIA certified diamond paperwork and an appraisal for the ring itself." : nonEngagementRingNotice;
+      : "";
+  const body = slug === "engagement-rings" ? "All engagement rings include IGI or GIA certified diamond paperwork and an appraisal for the ring itself." : "";
   productGrid(slug === "engagement-rings" ? engagementFirst(list) : list, names[slug] || `Shop ${label || "All Luxury Jewelry"} with The Don`, body, action);
 }
 
@@ -2917,7 +2610,7 @@ function importedProductFields(product) {
       ["Backing Type", ["Screw back"]],
     ];
   }
-  if (["Engagement Rings", "Rings", "Men's Rings", "Women's Rings", "Wedding Bands", "Men's Wedding Bands", "Women's Wedding Bands"].includes(category)) {
+  if (["Engagement Rings", "Rings"].includes(category)) {
     return [
       ["Diamond Type", ["Natural Diamond", "Lab-Grown Diamond", "Not sure yet"]],
       ["Metal Type", quoteMetals],
@@ -2930,7 +2623,7 @@ function importedProductFields(product) {
       ["Hidden Birthstone Option", ["No hidden birthstone", "Add hidden birthstone", "Discuss with jeweler"]],
     ];
   }
-  if (["Earrings", "Women's Earrings", "Men's Earrings"].includes(category)) {
+  if (category === "Earrings") {
     return [
       ["Metal Type", quoteMetals],
       ["Stone Size", ["0.5 carat", "1 carat", "1.5 carat", "2 carat", "3 carat", "Custom stone size"]],
@@ -2957,7 +2650,7 @@ function importedProductFields(product) {
       ["Stone Option", ["Diamond", "Gemstone", "No stones", "Custom stone request"]],
     ];
   }
-  if (["Bracelets", "Tennis Bracelets", "Anklets"].includes(category)) {
+  if (["Bracelets", "Tennis Bracelets"].includes(category)) {
     return [
       ["Length", ["Starting at 7 inches", "7.5 inches", "8 inches", "Custom length"]],
       ["Metal Type", quoteMetals],
@@ -3102,24 +2795,16 @@ function importedProductDetail(product) {
   wireRequestForm("imported-product-inquiry-form", "Thank you for your submission. Your request has been received and is currently under review. We will contact you regarding pricing, design details, and next steps.");
 }
 
-const importCategories = ["Engagement Rings", "Rings", "Men's Rings", "Women's Rings", "Earrings", "Women's Earrings", "Men's Earrings", "Pendants / Charms", "Chains", "Tennis Bracelets", "Bracelets", "Anklets", "Wedding Bands", "Men's Wedding Bands", "Women's Wedding Bands", "Watches", "Grillz", "Custom Jewelry", "Gold Buying / Services", "Custom Jewelry / Request Pricing"];
+const importCategories = ["Engagement Rings", "Rings", "Earrings", "Pendants / Charms", "Chains", "Tennis Bracelets", "Bracelets", "Watches", "Grillz", "Custom Jewelry", "Gold Buying / Services", "Custom Jewelry / Request Pricing"];
 
 function normalizeImportCategory(category) {
   const value = String(category || "").trim().toLowerCase();
   if (["engagement ring", "engagement rings", "ring", "rings"].includes(value)) return "Engagement Rings";
-  if (["men's rings", "mens rings", "men rings"].includes(value)) return "Men's Rings";
-  if (["women's rings", "womens rings", "women rings"].includes(value)) return "Women's Rings";
   if (["tennis bracelet", "tennis bracelets"].includes(value)) return "Tennis Bracelets";
   if (["bracelet", "bracelets"].includes(value)) return "Bracelets";
-  if (["anklet", "anklets"].includes(value)) return "Anklets";
-  if (["wedding band", "wedding bands"].includes(value)) return "Wedding Bands";
-  if (["men's wedding bands", "mens wedding bands", "men wedding bands"].includes(value)) return "Men's Wedding Bands";
-  if (["women's wedding bands", "womens wedding bands", "women wedding bands"].includes(value)) return "Women's Wedding Bands";
   if (["chain", "chains"].includes(value)) return "Chains";
   if (["pendant", "pendants", "charm", "charms", "pendants / charms", "pendants/charms", "pendant / charm", "pendant/charm"].includes(value)) return "Pendants / Charms";
   if (["earring", "earrings", "stud", "studs"].includes(value)) return "Earrings";
-  if (["women's earrings", "womens earrings", "women earrings"].includes(value)) return "Women's Earrings";
-  if (["men's earrings", "mens earrings", "men earrings"].includes(value)) return "Men's Earrings";
   if (["grill", "grillz"].includes(value)) return "Grillz";
   if (["watch", "watches"].includes(value)) return "Watches";
   if (["custom", "custom jewelry"].includes(value)) return "Custom Jewelry";
@@ -3162,14 +2847,6 @@ function csvRowForFile(rows, fileName) {
 
 function inferCategory(text) {
   const value = text.toLowerCase();
-  if (/men'?s wedding band|mens wedding band|male wedding band/.test(value)) return "Men's Wedding Bands";
-  if (/women'?s wedding band|womens wedding band|female wedding band/.test(value)) return "Women's Wedding Bands";
-  if (/wedding band/.test(value)) return "Wedding Bands";
-  if (/men'?s ring|mens ring|male ring/.test(value)) return "Men's Rings";
-  if (/women'?s ring|womens ring|female ring/.test(value)) return "Women's Rings";
-  if (/anklet/.test(value)) return "Anklets";
-  if (/women'?s earring|womens earring|female earring|women'?s stud|womens stud|female stud/.test(value)) return "Women's Earrings";
-  if (/men'?s earring|mens earring|male earring|men'?s stud|mens stud|male stud/.test(value)) return "Men's Earrings";
   if (/engagement|ring|oval|marquise|radiant|solitaire/.test(value)) return "Engagement Rings";
   if (/tennis|bracelet/.test(value)) return "Tennis Bracelets";
   if (/chain|cuban|rope|franco/.test(value)) return "Chains";
